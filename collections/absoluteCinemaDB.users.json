@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "688b279aca5098e110eeab38"
+  },
+  "name": "Isaac Lee",
+  "email": "isaac010606@gmail.com",
+  "password": "237hsh172$",
+  "dob": {
+    "day": 1,
+    "month": 6,
+    "year": 2006
+  },
+  "role": "Customer",
+  "__v": 0,
+  "token": "4e221267dcff8bfed19228e6ea530971"
+}]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Absolute Cinema</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+      <div class="authenticatedSection">
+        <a href="#" id="logoutLink">Logout</a>
+      </div>
+      <div class="unauthenticatedSection">
+        <a href="/login.html">Login</a>
+        <a href="/register.html">Register</a>
+      </div>
+    </header>
+    <div id="screeningError">
+      Sorry, we couldn't find the screening you were looking for.
+    </div>
+    <div id="screeningDetails">
+      <h1 id="movieName"></h1>
+      <span>
+        <span>Release Date: </span>
+        <p id="movieRelease"></p>
+      </span>
+      <span>
+        <span>Runtime: </span>
+        <p id="movieRuntime"></p>
+      </span>
+      <span>
+        <span>Language: </span>
+        <p id="movieLanguage"></p>
+      </span>
+      <div>
+        <span>Screening Time: </span>
+        <p id="screeningStart"></p>
+        to
+        <p id="screeningEnd"></p>
+      </div>
+      <span>
+        <span>Cinema: </span>
+        <p id="screeningCinema"></p>
+      </span>
+      <span>
+        <span>Available Seats: </span>
+        <p id="screeningSeats"></p>
+      </span>
+
+      <div class="unauthenticatedSection">
+        <p>Please <a href="/login.html">Login</a> to book a seat!</p>
+      </div>
+      <div class="authenticatedSection">
+        <div id="showCurrentBookings">
+          <h1>Current Bookings</h1>
+          <p id="currentBookings"></p>
+          <form id="unbookSeatsForm">
+            <button type="submit" value="Book">Clear bookings</button>
+          </form>
+          <div id="unbookSeatsStatusMessage"></div>
+        </div>
+        <div id="showBookingForm">
+          <form id="bookSeatsForm">
+            <h1>Booking</h1>
+            <label for="seats">Seats</label>
+            <input
+              type="text"
+              name="seats"
+              id="seats"
+              placeholder="Comma separated, e.g. A1, A2"
+            />
+            <button type="submit" value="Book">Book</button>
+          </form>
+          <div id="bookSeatsStatusMessage"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/screening.js"></script>
+  </body>
+</html>

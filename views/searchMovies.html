@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Cinema</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <div class="authenticatedSection">
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+        <div class="unauthenticatedSection">
+            <a href="/login.html">Login</a>
+            <a href="/register.html">Register</a>
+        </div>
+    </header>
+    <div id="movieError">
+        Sorry, we couldn't find the movie you were looking for.
+    </div>
+    <div id="movieDetails">
+        <h1 id="movieName"></h1>
+        <span>
+            <span>Release Date: </span>
+            <p id="movieRelease"></p>
+        </span>
+        <span>
+            <span>Runtime: </span>
+            <p id="movieRuntime"></p>
+        </span>
+        <span>
+            <span>Language: </span>
+            <p id="movieLanguage"></p>
+        </span>
+        <div>
+            <h2>Screenings</h2>
+            <div id="screeningsList"></div>
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/searchMovies.js"></script>
+</body>
+</html>
+

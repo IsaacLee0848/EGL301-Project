@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "38e55a34-a4a4-4f7d-ac74-a323cc79f9e5",
+		"name": "Absolute Cinema: An API Collection for Cinema Booking and Management",
+		"description": "The API Collection for my EGL301 Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44940901",
+		"_collection_link": "https://isaaclee-5983683.postman.co/workspace/Isaac-Lee's-Workspace~8842eb49-c320-482a-80b7-b8b30d6d77cf/collection/44940901-38e55a34-a4a4-4f7d-ac74-a323cc79f9e5?action=share&source=collection_link&creator=44940901"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Wilson Tan\",\r\n    \"email\": \"tanhockyong@gmail.com\",\r\n    \"password\": \"EGL301\",\r\n    \"dob\": {\r\n        \"day\": 4,\r\n        \"month\": 5,\r\n        \"year\": 1977\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/users/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login by Email 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseBody = pm.response.json()\r",
+							"\r",
+							"const token = responseBody.token;\r",
+							"\r",
+							"pm.collectionVariables.set(\"AUTH_TOKEN\", token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "isaac010606@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "237hsh172$",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login by Email 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "tanhockyong@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "EGL301",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login by Email [Error]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "isaac010606@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "AsimovNewton123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "User Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code == 200) {\r",
+							"    pm.collectionVariables.unset(\"AUTH_TOKEN\")\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{URL}}/api/users/logout",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"logout"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movies 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "movieName",
+							"value": "Four",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/movies/search",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"search"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movies 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "movieName",
+							"value": "Super",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/movies/search",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"search"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movies [Error]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieName\": 123456\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/movies/search",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"search"
+					]
+				},
+				"description": "Search for Movies by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "screeningId",
+							"value": ":id",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "{{USER_ID}}",
+							"type": "text"
+						},
+						{
+							"key": "seats",
+							"value": "A1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/bookings",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"bookings"
+					]
+				},
+				"description": "Add a Booking of Seats for a Movie Screening"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Booking [Error]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"screeningId\": 68c\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/bookings",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"bookings"
+					]
+				},
+				"description": "Add a Booking of Seats for a Movie Screening"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie by Movie ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{URL}}/api/movies/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Screenings by Movie ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/movies/:id/screenings",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						":id",
+						"screenings"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Search Movie Screenings by Movie ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookings for Screening",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/screenings/:screeningId/bookings",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"screenings",
+						":screeningId",
+						"bookings"
+					],
+					"variable": [
+						{
+							"key": "screeningId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Screening by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/screenings/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"screenings",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookings by User ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/users/{{USER_ID}}/bookings",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{USER_ID}}",
+						"bookings"
+					]
+				},
+				"description": "Get Movie Bookings by User ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Booking by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "seats",
+							"value": "B2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/bookings/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Update Movie Bookings by Booking ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Booking by ID [Error]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": Error\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/bookings/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Update Movie Bookings by Booking ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/bookings/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Delete Movie Bookings by Booking ID"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "USER_ID",
+			"value": "6842a26dc03f25f17504ebd8",
+			"type": "string"
+		},
+		{
+			"key": "API_TOKEN",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "AUTH_TOKEN",
+			"value": ""
+		}
+	]
+}

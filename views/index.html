@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Cinema</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <div class="authenticatedSection">
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+        <div class="unauthenticatedSection">
+            <a href="/login.html">Login</a>
+            <a href="/register.html">Register</a>
+        </div>
+    </header>
+    <h1>Now Showing</h1>
+    <form id="searchForm">
+        <input type="text" name="movieName" placeholder="Search Movies">
+        <input type="submit" value="Search">
+    </form>
+    <section class="movies">
+
+    </section>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+</html>

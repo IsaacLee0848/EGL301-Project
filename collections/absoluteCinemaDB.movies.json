@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "688b06be559ef447fa8858e4"
+  },
+  "name": "Marvel Studios' The Fantastic Four: First Steps",
+  "release": {
+    "$date": "2025-07-24T00:00:00.000Z"
+  },
+  "runtime": 115,
+  "language": "English"
+},
+{
+  "_id": {
+    "$oid": "688b07c1559ef447fa8858e5"
+  },
+  "name": "Superman",
+  "release": {
+    "$date": "2025-07-10T00:00:00.000Z"
+  },
+  "runtime": 129,
+  "language": "English"
+},
+{
+  "_id": {
+    "$oid": "688b08c2559ef447fa8858e6"
+  },
+  "name": "F1 The Movie",
+  "release": {
+    "$date": "2025-06-26T00:00:00.000Z"
+  },
+  "runtime": 155,
+  "language": "English"
+}]

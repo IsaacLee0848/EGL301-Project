@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "688da22491bd21b3cb09cedf"
+  },
+  "cinema": "AbsoluteCinema VivoCity",
+  "start": {
+    "$date": "2025-08-02T19:05:00.000Z"
+  },
+  "end": {
+    "$date": "2025-08-02T21:00:00.000Z"
+  },
+  "theatre": "Theatre D",
+  "seats": [
+    "A1",
+    "B2",
+    "C3",
+    "D4",
+    "E5",
+    "F6",
+    "G7",
+    "H8",
+    "J9",
+    "K10"
+  ],
+  "movieId": {
+    "$oid": "688b06be559ef447fa8858e4"
+  }
+}]
