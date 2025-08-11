@@ -1,16 +1,15 @@
 [{
   "_id": {
-    "$oid": "688b279aca5098e110eeab38"
+    "$oid": "68998f14953a4b341358da9a"
   },
   "name": "Isaac Lee",
   "email": "isaac010606@gmail.com",
-  "password": "237hsh172$",
+  "password": "$2b$10$H7t547kcwV4GAeatAh3Jme68YpnuNUwEPYh7QQMxcwWnM/IXJHvka",
   "dob": {
     "day": 1,
     "month": 6,
     "year": 2006
   },
   "role": "Customer",
-  "__v": 0,
-  "token": "4e221267dcff8bfed19228e6ea530971"
+  "__v": 0
 }]

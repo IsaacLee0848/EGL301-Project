@@ -1,28 +1,126 @@
 [{
   "_id": {
-    "$oid": "688da22491bd21b3cb09cedf"
+    "$oid": "6899891e0bc6db0fdd157129"
   },
-  "cinema": "AbsoluteCinema VivoCity",
+  "cinema": "AbsoluteCinema Suntec City",
   "start": {
-    "$date": "2025-08-02T19:05:00.000Z"
+    "$date": "2025-08-13T15:45:00.000Z"
   },
   "end": {
-    "$date": "2025-08-02T21:00:00.000Z"
+    "$date": "2025-08-13T17:54:00.000Z"
+  },
+  "theatre": "Theatre C",
+  "seats": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8"
+  ],
+  "movieId": {
+    "$oid": "688b07c1559ef447fa8858e5"
+  }
+},
+{
+  "_id": {
+    "$oid": "68998b5e0bc6db0fdd15712a"
+  },
+  "cinema": "AbsoluteCinema Vivo City",
+  "start": {
+    "$date": "2025-08-13T19:05:00.000Z"
+  },
+  "end": {
+    "$date": "2025-08-13T21:00:00.000Z"
+  },
+  "theatre": "Theatre A",
+  "seats": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8"
+  ],
+  "movieId": {
+    "$oid": "688b06be559ef447fa8858e4"
+  }
+},
+{
+  "_id": {
+    "$oid": "68998d2b0bc6db0fdd15712b"
+  },
+  "cinema": "AbsoluteCinema Bugis+",
+  "start": {
+    "$date": "2025-08-12T12:15:00.000Z"
+  },
+  "end": {
+    "$date": "2025-08-12T14:50:00.000Z"
   },
   "theatre": "Theatre D",
   "seats": [
     "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "B1",
     "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "C1",
+    "C2",
     "C3",
-    "D4",
-    "E5",
-    "F6",
-    "G7",
-    "H8",
-    "J9",
-    "K10"
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8"
   ],
   "movieId": {
-    "$oid": "688b06be559ef447fa8858e4"
+    "$oid": "688b08c2559ef447fa8858e6"
   }
 }]
